@@ -1,0 +1,9 @@
+// Split config
+include "src/outputs.kdl"
+include "src/workspaces.kdl"
+include "src/input.kdl"
+include "src/visual.kdl"
+include "src/keybindings.kdl"
+include "src/rules.kdl"
+include "src/autostart.kdl"
+

@@ -1,0 +1,38 @@
+#!/bin/bash
+# Keyboard layout indicator for LXQt panel > custom command widget
+
+# See layouts:
+#niri msg keyboard-layouts
+
+# Set languages
+K1=us
+K2=es
+#K3=se
+#K4=ru
+
+OUTPUT=flags # comment out to show text
+# Install flags: https://github.com/hampusborgos/country-flags
+
+if [[ "$OUTPUT" == flags ]]; then
+    FLAGS=$XDG_DATA_HOME/iso-flags-svg/country-4x3
+    niri msg event-stream |grep --line-buffered  Key|  grep -o --line-buffered '[0-9]'|while read -r n; do
+        case $n in
+            0)  echo "$FLAGS"/"$K1".svg ;;
+            1)  echo "$FLAGS"/"$K2".svg ;;
+#           2)  echo "$FLAGS"/"$K3".svg ;;
+#           3)  echo "$FLAGS"/"$K4".svg ;;
+        esac
+    done
+else
+    niri msg event-stream |grep --line-buffered  Key|  grep -o --line-buffered '[0-9]'|while read -r n; do
+        if [[ $n == 0 ]]; then
+            echo "$K1" | awk '{print toupper($0)}'
+        elif [[ $n == 1 ]]; then
+            echo "$K2" | awk '{print toupper($0)}'
+        elif [[ $n == 2 ]]; then
+            echo "$K3" | awk '{print toupper($0)}'
+        elif  [[ $n == 3 ]]; then
+            echo "$K4" | awk '{print toupper($0)}'
+        fi
+    done
+fi

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Niri Windowrules
+GenericName=Window rules used by niri
+Comment=
+Exec=sh -c "fpad $XDG_CONFIG_HOME/lxqt/wayland/src/rules.kdl"
+Type=Application
+Categories=Settings;DesktopSettings;
+Icon=window
+Terminal=false

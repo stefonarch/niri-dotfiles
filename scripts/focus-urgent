@@ -1,0 +1,2 @@
+#!/bin/bash
+niri msg -j event-stream |  jq --unbuffered -r '.WindowUrgencyChanged | select(. != null) | .id'  | xargs -I{} niri msg action focus-window --id {} && niri msg unset-window-urgent --id {}

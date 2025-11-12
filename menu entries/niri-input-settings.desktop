@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Niri Input Settings
+GenericName=Mouse, keyboard and other input settings for niri
+Comment=
+Exec=sh -c "fpad $XDG_CONFIG_HOME/lxqt/wayland/src/input.kdl"
+Type=Application
+Categories=Settings;DesktopSettings;
+Icon=mouse
+Terminal=false

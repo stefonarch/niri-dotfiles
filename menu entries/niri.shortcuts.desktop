@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Niri Shortcuts
+GenericName=Keybinds for niri
+Comment=
+Exec=sh -c "fpad $XDG_CONFIG_HOME/lxqt/wayland/src/keybindings.kdl"
+Type=Application
+Categories=Settings;DesktopSettings;
+Icon=keyboard
+Terminal=false
