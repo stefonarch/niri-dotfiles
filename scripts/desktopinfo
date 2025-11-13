@@ -1,0 +1,22 @@
+#!/bin/bash
+# shows current desktop/window in custom command plugin or compositor version
+
+if [[ "$XDG_CURRENT_DESKTOP" == *"sway"* ]]; then
+  sway -v
+elif [[ "$XDG_CURRENT_DESKTOP" == *"Hyprland"* ]]; then
+  hyprctl version|grep Tag |awk '{print "Hyprland " $2}'|sed 's/\,//'
+elif [[ "$XDG_CURRENT_DESKTOP" == *"wayfire"* ]]; then
+  wayfire -v | awk '{print "Wayfire " $1}'
+elif [[ "$XDG_CURRENT_DESKTOP" == *"labwc"* ]]; then
+  labwc -v
+elif [[ "$XDG_CURRENT_DESKTOP" == *"kwin_wayland"* ]]; then
+  echo kwin_wayland
+elif [[ "$XDG_CURRENT_DESKTOP" == *"river"* ]]; then
+  echo "river $(river -version)"
+elif [[ "$XDG_CURRENT_DESKTOP" == *"niri"* ]]; then
+  niri msg version|head -n1 | awk '{print $3}'
+  #X11 or not listed above here
+else
+   wmctrl -m | grep Name | cut -d: -f2
+fi
+

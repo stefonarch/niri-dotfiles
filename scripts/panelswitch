@@ -1,0 +1,19 @@
+#!/bin/bash
+# based on https://codeberg.org/MrReplikant/lxqt-panel-profiles switches between laptop only and dual monitor setup
+
+export XDG_RUNTIME_DIR="/run/user/1000"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
+CONNECTOR_STATE=$(cat /sys/class/drm/card1-HDMI-A-1/status)
+
+if [[ "$CONNECTOR_STATE" = "disconnected" ]]; then
+    qdbus6 org.lxqt.session /LXQtSession org.lxqt.session.stopModule lxqt-panel.desktop
+    cp /home/stef/.local/share/lxqt-panel-profiles/layouts/Laptop\ only/panel.conf /home/stef/.config/lxqt/panel.conf
+    sleep 1
+    qdbus6 org.lxqt.session /LXQtSession org.lxqt.session.startModule lxqt-panel.desktop
+else
+    qdbus6 org.lxqt.session /LXQtSession org.lxqt.session.stopModule lxqt-panel.desktop
+    cp /home/stef/.local/share/lxqt-panel-profiles/layouts/Niri\ dual/panel.conf /home/stef/.config/lxqt/panel.conf
+    sleep 1
+    qdbus6 org.lxqt.session /LXQtSession org.lxqt.session.startModule lxqt-panel.desktop
+fi

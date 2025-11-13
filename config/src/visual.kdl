@@ -74,4 +74,4 @@ layout {
 animations {
     slowdown 1.2
 }
-screenshot-path "/tmp/Niri/Screenshot-%d-%H-%M-%S.png"
+screenshot-path "/tmp/niri/Screenshot-%A-%H-%M-%S.png"

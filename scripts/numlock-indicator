@@ -1,0 +1,8 @@
+#!/bin/bash
+#|numlock indicator command for custom command widget. `input3` could be different
+if [ "$(cat /sys/class/leds/input3\:\:numlock/brightness)" == "0" ]; then
+    data=$(cat /home/stef/Documenti/utilita/n-off.svg);
+else
+    data=$(cat /home/stef/Documenti/utilita/n-on.svg);
+fi
+echo $data

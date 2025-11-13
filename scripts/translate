@@ -1,0 +1,2 @@
+#!/bin/bash
+notify-send -a Traduzione -i google-translate -t 13000 "Traduzione automatica" "$(trans -t it -show-original n -show-languages n -show-alternatives n -no-ansi "$(wl-paste -p)")"
