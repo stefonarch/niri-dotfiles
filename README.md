@@ -10,7 +10,7 @@ LXQt Theme: _Graphite_; icons: _papirus-dark_; widget style: _kvantum dark_; kva
 
 * PCManFM-Qt's desktop can hide items (if any) using right click menu, so it can act as a wallpaper daemon (with slides evt.), while overview will use swaybg.
 * Panel with custom commmand widgets:
-  * Show running compositor/Wm (`scripts/desktopinfo`), launches "Session Settings".
+  * Show running compositor/Wm (`scripts/desktopinfo`), launches "Session Settings" on click.
   * Coredumps count.
   * CPU temp.
   * Toggle brightness in steps for HDMI-A-1 (`scripts/dim.sh`).
@@ -19,6 +19,7 @@ LXQt Theme: _Graphite_; icons: _papirus-dark_; widget style: _kvantum dark_; kva
   * Analog clock (https://github.com/lxqt/lxqt/discussions/2179#discussioncomment-14628471).
 * Screenrecorder shortcuts (Meta+Print, Meta+Shift+Print to stop, using wf-recorder).
 * Shortcut for detect Xwayland apps (Meta+X).
-* Wooz for zoom (Meta+Z).
+* Shortcut to configure windows as floating (Mod+Alt+F; `script/makefloating`).
+* Wooz for zoom (Meta+Z)
 * "Translate any selected text" shortcut and show it as notification (Meta+N; `scripts/translate`).
-* Switch panel configuration when monitor is disconneced from laptop (`scripts/panelswitch`).
+* Switch panel configuration when monitor is disconnected from laptop (`scripts/panelswitch`).

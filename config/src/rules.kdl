@@ -37,9 +37,10 @@ window-rule {
     default-column-width { proportion 0.73; }
 }
 window-rule {
-    match app-id=r#"^thunderbird$"#
+    match app-id=r#"^.*hunderbird.*$"#
     open-on-workspace "Gente"
-    default-column-width { proportion 0.70; }
+    //default-column-width { proportion 0.70; }
+
 }
 window-rule {
     match app-id=r#"^org\.telegram\.desktop$"#
@@ -98,15 +99,7 @@ window-rule {
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screen-capture"
 }
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id=r#"^lxqt-.*|.*qruler|pavu.*|screengrab|.*copyq|qarma|.*portal-lxqt.*|cryptHider|meteo-qt.*|python3|.*conf|XEyes|.*tuxedo.*$"#
-    match title=r#"^Prefe.*|.*file.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|.*Selez.*|.*found.*|.*rimovibile.*$"#
-    exclude app-id="lxqt-archiver"
-    exclude app-id="org.kde.filelight"
-    exclude app-id="media-downloader"
-    open-floating true
-}
+
 window-rule {
     geometry-corner-radius 8 8 8 8
     clip-to-geometry true

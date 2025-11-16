@@ -13,12 +13,37 @@ overview {
     zoom 0.3
 }
 
+recent-windows {
+    // off
+    open-delay-ms 250
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#8e0500"
+        padding 30
+        corner-radius 15
+    }
+
+    previews {
+        max-height 400
+        max-scale 0.3
+        }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+Shift+left  { next-window filter="app-id"; }
+        Alt+Shift+right { previous-window filter="app-id"; }
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+    }
+}
+
 prefer-no-csd
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     gaps 8
-    center-focused-column "on-overflow"
+    //center-focused-column "on-overflow"
     preset-column-widths {
         proportion 0.75
         proportion 1.0

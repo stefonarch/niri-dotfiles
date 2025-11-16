@@ -1,0 +1,22 @@
+#!/bin/bash
+# Add/remove focused window to floating window rules with a keybind.
+# Needs separate config "floating.kdl" exclusively for those rules.
+
+CONF=$XDG_CONFIG_HOME/lxqt/wayland/src/floating.kdl
+WINDOW="$(niri msg focused-window |grep Title |grep -o '".*"')"
+
+if ! grep -Fq "$WINDOW" $CONF; then
+    notify-send -a "Niri Configuration" \
+    -t 3000 \
+    -i preferences-system-windows-behavior \
+    "Configured $WINDOW as always floating window"
+    sed -i "/open-floating/ i\\    match title=${WINDOW}" $CONF
+else
+    sed -i "/$WINDOW/d" $CONF
+    notify-send -a "Niri Configuration" \
+    -t 3000 \
+    -i preferences-system-windows-behavior \
+    "Removed $WINDOW from always floating windows"
+fi
+
+niri msg action toggle-window-floating

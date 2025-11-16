@@ -5,5 +5,6 @@ include "src/input.kdl"
 include "src/visual.kdl"
 include "src/keybindings.kdl"
 include "src/rules.kdl"
+include "src/floating.kdl"
 include "src/autostart.kdl"
 

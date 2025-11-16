@@ -1,0 +1,25 @@
+// floating rules
+//window-rule {
+ //   match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+//    match title=r#"^Prefe.*|.*file.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|.*Selez.*|.*found.*|.*rimovibile.*|.*Promem.*$"#
+//}
+
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"^lxqt-.*|.*copyq|qarma|XEyes|.*tuxedo.*$"#
+    match title="Cerca file"
+    match title="Informazioni batteria"
+    match title="Impostazioni gestore energia"
+    match title="Active connection found"
+    match title="stef@casa"
+    match title="Password"
+    match title="Apri file"
+    match title="LXQt Panel Layouts"
+    match title="Impostazioni del conto alla rovescia — KTimer"
+    match title="Preferenze della scrivania"
+    match title="Supporto rimovibile inserito"
+    match title="Esegui file"
+    open-floating true
+    exclude app-id="lxqt-archiver"
+}

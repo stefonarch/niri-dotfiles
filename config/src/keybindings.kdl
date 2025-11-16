@@ -95,10 +95,8 @@ binds {
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { reset-window-height; }
-    Mod+Alt+F  { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
-
     Mod+Minus { set-column-width "-10%"; }
     Mod+Plus { set-column-width "+10%"; }
 
@@ -107,6 +105,7 @@ binds {
     Mod+Shift+Plus { set-window-height "+10%"; }
 
     Mod+V       { toggle-window-floating; }
+    Mod+Alt+F { spawn "makefloating"; }
 
     Mod+W hotkey-overlay-title="Toggle Tabs"{ toggle-column-tabbed-display; }
 
