@@ -3,7 +3,12 @@
 # Needs separate config "floating.kdl" exclusively for those rules.
 
 CONF=$XDG_CONFIG_HOME/lxqt/wayland/src/floating.kdl
-WINDOW="$(niri msg focused-window |grep Title |grep -o '".*"')"
+WINDOW=$(echo "\"$(niri msg -j focused-window | jq -r '.title')\"")
+
+# Use regex if title is long
+if [ ${#WINDOW} -gt 30 ]; then
+    WINDOW=$( echo "r#\"^$(echo "$WINDOW" | cut -c2-30| tr -d '\n').*\$\"#")
+fi
 
 if ! grep -Fq "$WINDOW" $CONF; then
     notify-send -a "Niri Configuration" \

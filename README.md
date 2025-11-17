@@ -1,7 +1,7 @@
 # niri-dotfiles
 > Niri scripts, hacks and dotfiles with LXQt 2.3
 
-Screenshot (external monitor -laptop monitor is just browser and RSS and no panel):
+Screenshot (external monitor):
 
 ![Screenshot LXQt Desktop with niri](niri.png)
 
