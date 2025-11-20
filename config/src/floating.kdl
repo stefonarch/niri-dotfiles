@@ -14,12 +14,17 @@ window-rule {
     match title="Active connection found"
     match title="stef@casa"
     match title="Password"
-    match title="Apri file"
     match title="LXQt Panel Layouts"
     match title="Impostazioni del conto alla rovescia — KTimer"
     match title="Preferenze della scrivania"
     match title="Supporto rimovibile inserito"
     match title="Esegui file"
+    match title=r#"^Apri file.*$"#
+    match title="Scelta allegato"
+    match title="Create Archive"
+    match title="QDBusViewer"
+    match title=r#"^Salva immagine - Di tendenza .*$"#
+    match title="Libreria"
     open-floating true
     exclude app-id="lxqt-archiver"
 }

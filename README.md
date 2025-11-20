@@ -23,3 +23,9 @@ LXQt Theme: _Graphite_; icons: _papirus-dark_; widget style: _kvantum dark_; kva
 * Wooz for zoom (Meta+Z)
 * "Translate any selected text" shortcut and show it as notification (Meta+N; `scripts/translate`).
 * Switch panel configuration when monitor is disconnected from laptop (`scripts/panelswitch`).
+
+## Input configuration
+
+![Niri Input Configuration](niri_inputsettings.png)
+
+`scripts/niri-inputsettings.py` (AI generated)

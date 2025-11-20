@@ -13,9 +13,25 @@ overview {
     zoom 0.3
 }
 
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 10
+        delay-ms 50
+        max-speed 2500
+        }
+        hot-corners {
+        off
+   }
+}
+
+cursor {
+   // hide-when-typing
+   // hide-after-inactive-ms 3000
+}
+
 recent-windows {
     // off
-    open-delay-ms 250
+    open-delay-ms 50
     highlight {
         active-color "#999999ff"
         urgent-color "#8e0500"
@@ -24,8 +40,8 @@ recent-windows {
     }
 
     previews {
-        max-height 400
-        max-scale 0.3
+        max-height 300
+        max-scale 0.4
         }
 
     binds {
